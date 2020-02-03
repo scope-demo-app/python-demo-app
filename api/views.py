@@ -2,8 +2,7 @@ import json
 
 from django.http import JsonResponse
 from django.views import View
-from django.core import serializers
-from api.models import Restaurant
+from api.models import Rating
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
 
@@ -15,11 +14,10 @@ class RestaurantsView(View):
         return super(RestaurantsView, self).dispatch(request, *args, **kwargs)
 
     def get(self, request):
-        data = serializers.serialize("json", Restaurant.objects.all())
-        return JsonResponse(data=data, safe=False)
+        return JsonResponse({'foo': 'bar'})
 
     def post(self, request):
-        new_restaurant_data = json.loads(request.body)
-        new_restaurant = Restaurant.objects.create(name=new_restaurant_data['name'], description=new_restaurant_data['description'])
+        new_rating_data = json.loads(request.body)
+        new_rating = Rating.objects.create(rating=new_rating_data['rating'], restaurant=new_rating_data['restaurant'])
 
-        return JsonResponse(data={'id':new_restaurant.id, 'name': new_restaurant.name, 'description': new_restaurant.description}, safe=False)
+        return JsonResponse(data={'id': new_rating.id, 'rating':new_rating.rating})
