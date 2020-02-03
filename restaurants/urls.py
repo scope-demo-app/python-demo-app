@@ -1,8 +1,8 @@
 from django.contrib import admin
 from django.urls import path
-from api.views import RestaurantsView
+from api.views import RatingsView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('restaurants/', RestaurantsView.as_view()),
+    path('ratings/<restaurant>', RatingsView.as_view()),
 ]

@@ -15,7 +15,7 @@ class Migration(migrations.Migration):
             name='Rating',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('rating', models.CharField(choices=[('1', '1 star'), ('2', '2 stars'), ('3', '3 stars'), ('4', '4 stars'), ('5', '5 stars')], max_length=1)),
+                ('rating', models.IntegerField(max_length=1)),
                 ('restaurant', models.UUIDField()),
             ],
         ),
