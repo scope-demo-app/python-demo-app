@@ -24,8 +24,13 @@ jobs:
           python-version: "3.x"
       - name: Install dependencies
         run: pip install -r requirements.txt
-      - name: Scope for Python
+      - name: Scope for Python Django
         uses: undefinedlabs/scope-for-python-action@v1
         with:
           dsn: ${{secrets.SCOPE_DSN}}
           command: python manage.py test
+      - name: Scope for Python pytest
+        uses: undefinedlabs/scope-for-python-action@v1
+        with:
+          dsn: ${{secrets.SCOPE_DSN}}
+          command: pytest api/tests_pytest.py

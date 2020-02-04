@@ -2,6 +2,7 @@ import uuid
 
 from django.test import TestCase, Client
 from django.urls import reverse
+import requests
 
 from api.models import Rating
 
@@ -18,3 +19,11 @@ class RatingsTestCase(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertEqual(json['rating'], 1.5)
         self.assertEqual(json['restaurant'], str(self.restaurant_id))
+
+
+class RequestsTestCase(TestCase):
+    def test_can_request_to_google(self):
+        response = requests.get('https://www.google.com')
+        self.assertEqual(response.status_code, 200)
+
+  
