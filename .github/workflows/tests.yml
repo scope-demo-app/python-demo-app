@@ -6,6 +6,7 @@ jobs:
   build:
     env:
       SCOPE_DSN: ${{ secrets.SCOPE_DSN }}
+      DB_PASS: ${{ secrets.DB_PASS }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
