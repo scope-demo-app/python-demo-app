@@ -8,6 +8,15 @@ jobs:
       SCOPE_DSN: ${{ secrets.SCOPE_DSN }}
       DB_PASS: ${{ secrets.DB_PASS }}
     runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:11.5
+        env:
+          POSTGRES_USER: db_user_demo_app
+          POSTGRES_PASSWORD: ${{ secrets.DB_PASS }}
+          POSTGRES_DB: pythondemoapp
+        ports:
+          - 5432:5432
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-python@v1
