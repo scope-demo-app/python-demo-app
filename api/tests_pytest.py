@@ -15,3 +15,8 @@ def some_function(duration=0.000001):
 def test_benchmark(benchmark):
     result = benchmark(some_function)
     assert result == BENCHMARK_RESULT
+
+
+def test_expensive_operation():
+    time.sleep(5)
+    assert True
