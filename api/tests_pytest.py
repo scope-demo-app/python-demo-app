@@ -335,6 +335,6 @@ def test_function_Michiko():
 def test_flaky(execution_number):
     if execution_number % 2 == 1:
         assert True
-    else
+    else:
         assert False
 
