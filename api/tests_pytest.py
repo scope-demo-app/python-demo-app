@@ -1,5 +1,6 @@
 import time
 import random
+import pytest
 
 
 def increment(x):
@@ -18,6 +19,21 @@ def test_benchmark(benchmark):
     result = benchmark(some_function)
     assert result == BENCHMARK_RESULT
 
+def test_benchmark_2(benchmark):
+    result = benchmark(some_function)
+    assert result == BENCHMARK_RESULT
+
+def test_benchmark_3(benchmark):
+    result = benchmark(some_function)
+    assert result == BENCHMARK_RESULT
+
+def test_benchmark_4(benchmark):
+    result = benchmark(some_function)
+    assert result == BENCHMARK_RESULT
+
+def test_benchmark_5(benchmark):
+    result = benchmark(some_function)
+    assert result == BENCHMARK_RESULT
 
 def test_expensive_operation():
     time.sleep(5)
