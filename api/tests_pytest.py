@@ -5898,6 +5898,11 @@ def test_dummy_Stevenson():
     assert True
 
 
+def test_function_Pedro():
+    time.sleep(random.uniform(0, 1))
+    assert True
+
+
 @pytest.mark.parametrize('execution_number', range(2))
 def test_demotest(execution_number):
     if execution_number == 0:
