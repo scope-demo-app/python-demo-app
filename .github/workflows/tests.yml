@@ -7,6 +7,10 @@ jobs:
     env:
       SCOPE_DSN: ${{ secrets.SCOPE_DSN }}
       DB_PASS: password
+      DB_NAME: pythondemoapp
+      DB_USER: db_user_demo_app
+      DB_HOST: localhost
+      DB_PORT: 5432
     runs-on: ubuntu-latest
     services:
       postgres:
