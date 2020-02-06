@@ -21,7 +21,7 @@ pytest-benchmark==3.2.3
 pytz==2019.3
 PyYAML==5.3
 requests==2.22.0
-scopeagent==0.3.13b1
+scopeagent==0.3.13
 six==1.14.0
 sqlparse==0.3.0
 urllib3==1.25.8
