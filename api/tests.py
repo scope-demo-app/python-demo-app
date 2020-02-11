@@ -26,4 +26,9 @@ class RatingsTestCase(TestCase):
 class RequestsTestCase(TestCase):
     def test_demotest_requests(self):
         response = requests.get('https://go-demo-app.undefinedlabs.dev/restaurants/1')
-        self.assertEqual(response.status_code, 200)
+        if response.status_code != 200:
+            raise Exception(
+                'There was a problem in the request. HTTP status: {status_code}'.format(
+                    status_code=response.status_code
+                )
+            )
