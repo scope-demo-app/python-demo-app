@@ -5910,3 +5910,7 @@ def test_demotest(execution_number):
         assert response.status_code == 200
     else:
         assert False
+
+def test_integration_test(self):
+    response = requests.get('https://go-demo-app.undefinedlabs.dev/restaurants/1')
+    assert response.status_code == 200
