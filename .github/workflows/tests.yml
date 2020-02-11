@@ -33,13 +33,13 @@ jobs:
         with:
           dsn: ${{secrets.SCOPE_DSN}}
           command: python manage.py test
-      - name: Run pytest Tests
-        uses: undefinedlabs/scope-for-python-action@v1
-        with:
-          dsn: ${{secrets.SCOPE_DSN}}
-          command: pytest api/tests_pytest.py
       - name: Run unittest Tests
         uses: undefinedlabs/scope-for-python-action@v1
         with:
           dsn: ${{secrets.SCOPE_DSN}}
           command: python -m unittest api/tests_unittest.py
+      - name: Run pytest Tests
+        uses: undefinedlabs/scope-for-python-action@v1
+        with:
+          dsn: ${{secrets.SCOPE_DSN}}
+          command: pytest api/tests_pytest.py
