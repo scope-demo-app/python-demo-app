@@ -37,3 +37,7 @@ class RequestsTestCase(TestCase):
         self.assertEqual(response.status_code, 200)
         response_json = requests.delete('https://jsonplaceholder.typicode.com/todos/1')
         self.assertEqual(response.status_code, 200)
+
+    def test_integration_test(self):
+        response = requests.get('https://go-demo-app.undefinedlabs.dev/restaurants')
+        self.assertEqual(response.status_code, 200)
