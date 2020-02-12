@@ -4,6 +4,7 @@ from django.test import TestCase, Client
 from django.urls import reverse
 import requests
 
+from .utils import parse_response
 from api.models import Rating
 
 
@@ -26,9 +27,5 @@ class RatingsTestCase(TestCase):
 class RequestsTestCase(TestCase):
     def test_demotest_requests(self):
         response = requests.get('https://go-demo-app.undefinedlabs.dev/restaurants/1')
-        if response.status_code != 200:
-            raise Exception(
-                'There was a problem in the request. HTTP status: {status_code}'.format(
-                    status_code=response.status_code
-                )
-            )
+        result = parse_response(response)
+        self.assertEqual(result, 'OK')
