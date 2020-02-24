@@ -1,6 +1,7 @@
 import time
 import random
 import pytest
+import requests
 
 
 def increment(x):
@@ -5904,3 +5905,11 @@ def test_flaky(execution_number):
     else:
         assert False
 
+
+@pytest.mark.parametrize('execution_number', range(2))
+def test_flaky(execution_number):
+    if execution_number == 0:
+        response = requests.get('https://go-demo-app.undefinedlabs.dev/restaurants')
+        assert response.status_code == 200
+    else:
+        assert False
