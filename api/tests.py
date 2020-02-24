@@ -23,21 +23,6 @@ class RatingsTestCase(TestCase):
 
 
 class RequestsTestCase(TestCase):
-    def test_can_do_http_requests(self):
-        response = requests.get('https://www.google.com')
-        self.assertEqual(response.status_code, 200)
-        response_json = requests.post(
-            'https://jsonplaceholder.typicode.com/todos/',
-            data={'payload': 'value'},
-            headers={
-                'content-type': 'json',
-                'Authorization': 'secret_should_be_redacted',
-            },
-        )
-        self.assertEqual(response.status_code, 200)
-        response_json = requests.delete('https://jsonplaceholder.typicode.com/todos/1')
-        self.assertEqual(response.status_code, 200)
-
     def test_integration_test(self):
         response = requests.get('https://go-demo-app.undefinedlabs.dev/restaurants')
         self.assertEqual(response.status_code, 200)
