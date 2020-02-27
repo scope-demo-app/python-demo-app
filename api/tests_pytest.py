@@ -5898,14 +5898,6 @@ def test_function_Stevenson():
     assert True
 
 
-@pytest.mark.parametrize('execution_number', range(5))
-def test_flaky(execution_number):
-    if execution_number % 2 == 1:
-        assert True
-    else:
-        assert False
-
-
 @pytest.mark.parametrize('execution_number', range(2))
 def test_flaky(execution_number):
     if execution_number == 0:
