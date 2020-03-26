@@ -1,11 +1,9 @@
-# Scope Agent configuration file
 instrumentation:
   enabled: true
   http:
     payloads: true
     headers:
       - ot-tracer-spanid
-      - ot-tracer-traceid
   db:
     statement_values: true
 metadata:
