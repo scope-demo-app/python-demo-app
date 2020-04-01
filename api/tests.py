@@ -15,7 +15,7 @@ class RatingsTestCase(TestCase):
         Rating.objects.create(restaurant=self.restaurant_id, rating=3)
         self.client = Client()
 
-    def test_calculates_average(self):
+    def test_demotest_calculates_average(self):
         response = self.client.get(reverse('ratings', args=(self.restaurant_id,)))
         json = response.json()
         self.assertEqual(response.status_code, 200)
@@ -24,6 +24,6 @@ class RatingsTestCase(TestCase):
 
 
 class RequestsTestCase(TestCase):
-    def test_integration_test(self):
+    def test_demotest_requests(self):
         response = requests.get('https://go-demo-app.undefinedlabs.dev/restaurants')
         self.assertEqual(response.status_code, 200)
